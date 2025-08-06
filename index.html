@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GitProfileInfo_UsingGitAPI</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="Assets/favicon_io/android-chrome-512x512.png" type="image/x-icon">
     <script
       src="https://kit.fontawesome.com/28af3d1956.js"
       crossorigin="anonymous"
@@ -12,16 +13,22 @@
   </head>
   <body>
     <div class="User_card">
-      <div class="Usercontainer">
-        <img
-          class="user_avatar"
-          height="100"
-          width="200"
-          src=""
-          alt=""
-        />
+      <div class="User_Info">
+        <div class="info_Box">
+          <div class="UserImgcontainer">
+            <img class="user_avatar" height="100" width="200" src="" alt="" />
+          </div>
 
-        <p class="Username"></p>
+          <div class="Follow_Container">
+            <div class="Followers"></div>
+            <div class="Following"></div>
+          </div>
+        </div>
+
+        <div class="User_Details">
+          <p class="Username"></p>
+          <p class="login"></p>
+        </div>
       </div>
       <div class="User_SocialAccounts">
         <div class="bio"><p class="Bio_para"></p></div>
@@ -30,7 +37,7 @@
           <a class="X_Acc_Link" href=""></a>
         </div>
       </div>
-      <div class="btn"><button class="getUserBtn">GET USER_Info</button></div>
+      <div class="btn"><button class="getUserBtn">GET GitUSER_Info</button></div>
     </div>
 
     <script src="script.js"></script>
