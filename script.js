@@ -8,23 +8,30 @@ const fa_x_twitter = document.querySelector(".fa-x-twitter");
 const GitAPI = "https://api.github.com/users/KARTIK78O";
 
 function ResetAll() {
-  if (user_avatar) {
-    user_avatar.src = "https://tse1.mm.bing.net/th/id/OIP.hfF9W17CHoBL-nukZBRptwHaF9?rs=1&pid=ImgDetMain&o=7&rm=3";
-    user_avatar.alt = "";
-  }
+  user_avatar.src =
+    "https://tse1.mm.bing.net/th/id/OIP.hfF9W17CHoBL-nukZBRptwHaF9?rs=1&pid=ImgDetMain&o=7&rm=3";
+  user_avatar.alt = "dummy DP";
 
-  if (Username) Username.textContent = "Username";
-  if (X_Acc_Link) X_Acc_Link.textContent = "https://twitter.com/FakeID";
-  if (Bio) Bio.textContent = "Bio";
+  Username.textContent = "Username";
+  X_Acc_Link.textContent = "https://twitter.com/FakeID";
+  Bio.textContent = "Bio";
 }
 
 ResetAll();
 
+document.querySelector(".getUserBtn").addEventListener("click", getdata);
+// Jaise hi btn par click hoga getdata Call Hoga Aur Data Inject ho Jaega
+
 // getting Data - Data values and Key
 async function getdata() {
-  let response = await fetch(GitAPI);  // Api Fetch Karega Jab Tak data na Aa gye await se wait krega
-  let Data = await response.json();   // API ke Data Ko Json me Convert karega [Aur ye hi Actual me Data hai Jo hame Chaiye]
-  console.log(Data);             // Printing response
-}
+  let response = await fetch(GitAPI); // Api Fetch Karega Jab Tak data na Aa gye await se wait krega
+  let Data = await response.json(); // API ke Data Ko Json me Convert karega [Aur ye hi Actual me Data hai Jo hame Chaiye]
+  console.log(Data); // Printing response
 
-document.querySelector(".getUserBtn").addEventListener("click", getdata);
+  // Data Inject Karna
+  user_avatar.src = Data.avatar_url;
+  user_avatar.alt = "Kartik Ramvani DP";
+  Username.textContent = Data.name;
+  X_Acc_Link.innerHTML = Data.twitter_username ;
+  Bio.textContent = Data.bio;
+}

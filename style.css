@@ -11,7 +11,7 @@ html {
   width: 100dvw;
   margin: 0;
   background: url(Assets/grabient-grid-1754471810650.png);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
@@ -34,14 +34,12 @@ html {
   height: 80dvh;
   width: 50dvw;
   border-radius: 2rem;
-  margin: 0 auto;
 }
 
 .Usercontainer {
   display: flex;
   justify-content: space-around;
   padding: 1rem 2rem 1rem 2rem;
-  width: 80%;
 }
 .Usercontainer .Username {
   font-size: 2rem;
@@ -68,6 +66,7 @@ html {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  margin: 0 auto;
 }
 
 .User_SocialAccounts .bio .Bio_para {
