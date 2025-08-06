@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+}
+
+body,
+html {
+  margin: 0;
+  background: url(Assets/grabient-grid-1754471810650.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.User_card {
+  padding: 2rem;
+  background: #f12711; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f5af19,
+    #f12711
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f5af19,
+    #f12711
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 80dvh;
+  width: 50dvw;
+  border-radius: 2rem;
+}
+
+.Usercontainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 2rem 1rem 2rem;
+  width: 80%;
+}
+.Usercontainer .Username {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: white;
+}
+
+.user_avatar {
+  width: 150px; /* Set fixed width */
+  height: 150px; /* Set same height */
+  object-fit: cover; /* Crop extra parts to fit in circle */
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.246);
+}
+
+.User_SocialAccounts {
+  display: flex;
+  width: 80%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.User_SocialAccounts .bio p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.btn button {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  width: 20%;
+  border: 2px solid black;
+  font-size: 1rem;
+  
+}
+
+.btn button:hover{
+cursor: pointer;
+
+}
+.btn button:active{
+background-color: rgba(255, 255, 255, 0);
+
+}
+
+
+
