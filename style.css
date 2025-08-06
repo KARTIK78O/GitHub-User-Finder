@@ -7,12 +7,12 @@
 
 body,
 html {
+  height: 100dvh;
+  width: 100dvw;
   margin: 0;
   background: url(Assets/grabient-grid-1754471810650.png);
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  width: 100dvw;
-  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,7 +83,7 @@ html {
   justify-content: center;
 }
 
-.btn button{
+.btn button {
   display: flex;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.2);
@@ -91,25 +91,19 @@ html {
   width: 20%;
   border: 2px solid black;
   font-size: 1rem;
-  
 }
 
-.btn button:hover{
-cursor: pointer;
-
+.btn button:hover {
+  cursor: pointer;
 }
-.btn button:active{
-background-color: rgba(255, 255, 255, 0);
-
+.btn button:active {
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .X_Acc_Link {
   color: white;
   letter-spacing: 0.2rem;
   padding: 0.3rem 1rem;
-  border : 2px solid rgba(0, 0, 0, 0.3)  ;
+  border: 2px solid rgba(0, 0, 0, 0.3);
   border-radius: 20rem;
 }
-
-
-

@@ -3,6 +3,7 @@ const Username = document.querySelector(".Username");
 const X_Acc_Link = document.querySelector(".X_Acc_Link");
 const Bio = document.querySelector(".Bio_para");
 const fa_x_twitter = document.querySelector(".fa-x-twitter");
+// const Btn = document.querySelector(".getUserBtn");
 
 const GitAPI = "https://api.github.com/users/KARTIK78O";
 
@@ -26,4 +27,4 @@ async function getdata() {
   console.log(Data);             // Printing response
 }
 
-getdata(); // Calling Function
+document.querySelector(".getUserBtn").addEventListener("click", getdata);
