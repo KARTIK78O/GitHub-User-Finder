@@ -20,7 +20,7 @@ function ResetAll() {
   login.textContent = "Login";
   Followers.textContent = "Followers";
   Following.textContent = "Following";
-  X_Acc_Link.textContent = "https://twitter.com/fakeAccount";
+  X_Acc_Link.textContent = "X_Account";
   Bio.textContent = "Bio";
 }
 
