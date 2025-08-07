@@ -7,7 +7,9 @@ const Btn = document.querySelector(".getUserBtn");
 const login = document.querySelector(".login");
 const Followers = document.querySelector(".Followers");
 const Following = document.querySelector(".Following");
-const GitAPI = "https://api.github.com/users/KARTIK78O";
+const Submit = document.querySelector(".Submit");
+
+const GitAPI = "https://api.github.com/users/";
 
 // Starting Page Or Jab Bhi Load Hoga
 function ResetAll() {
@@ -29,21 +31,48 @@ ResetAll(); // Calling the ResetAll Function [Starting Page Or Jab Bhi Load Hoga
 // Jaise hi btn par click hoga getdata Call Hoga Aur Data Inject ho Jaega
 Btn.addEventListener("click", getdata);
 
+Submit.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    getdata();
+  }
+});
+
 //====================================================================================|
 
 // getting Data - Data values and Key
-async function getdata() {
-  let response = await fetch(GitAPI); // Api Fetch Karega Jab Tak data na Aa gye await se wait krega
-  let Data = await response.json(); // API ke Data Ko Json me Convert karega [Aur ye hi Actual me Data hai Jo hame Chaiye]
-  console.log(Data); // Printing response
 
-  // Data Inject Karna
-  user_avatar.src = Data.avatar_url;
-  user_avatar.alt = "Kartik Ramvani DP";
-  Username.textContent = Data.name;
-  login.textContent = Data.login;
-  Followers.textContent = `Followers: ${Data.followers}`;
-  Following.textContent = `Following: ${Data.following}`;
-  X_Acc_Link.innerHTML = Data.twitter_username;
-  Bio.textContent = Data.bio;
+async function getdata() {
+  const username = Submit.value.trim();
+
+  if (username === "") {
+    alert("Please enter a username");
+    return;
+  }
+
+  try {
+    const response = await fetch(`${GitAPI}${username}`);
+    const Data = await response.json();
+
+    if (Data.message === "Not Found") {
+      alert("User not found");
+      ResetAll(); // Reset to default if user not found
+      return;
+    }
+
+    // Data Inject Karna
+    user_avatar.src = Data.avatar_url;
+    user_avatar.alt = "GitUser DP";
+    Username.textContent = Data.name || "No Name";
+    login.textContent = Data.login || "No Login";
+    Followers.textContent = `Followers: ${Data.followers}`;
+    Following.textContent = `Following: ${Data.following}`;
+    X_Acc_Link.textContent = Data.twitter_username
+      ? `https://twitter.com/${Data.twitter_username}`
+      : "No Twitter";
+    Bio.textContent = Data.bio || "No Bio";
+  } catch (error) {
+    console.log("Error fetching data:", error);
+    alert("Something went wrong!");
+  }
 }

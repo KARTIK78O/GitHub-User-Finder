@@ -49,7 +49,7 @@ html {
   padding: 1rem 2rem 1rem 2rem;
 }
 
-.info_Box{
+.info_Box {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -95,28 +95,40 @@ html {
   margin-bottom: 1rem;
 }
 
-.btn {
-  padding: 2rem 0;
+.input_Container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 45%;
+  margin: 0 auto 4rem auto;
 }
 
-.btn button {
-  display: flex;
-  justify-content: center;
+.input_Container .getUserBtn {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 2rem;
-  width: 30%;
-  border: 2px solid black;
-  font-size: 1rem;
+  transform: scale(1.5);
+  padding: 0.5rem;
+}
+
+.input_Container input {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 3rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  height: 3rem;
+  padding: 0.5rem 2rem;
+}
+
+.input_Container input::placeholder {
+  color: white;
+  font-size: 1.2rem;
 }
 
 .btn button:hover {
   cursor: pointer;
 }
 .btn button:active {
-  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid black;
 }
 
 .X_Acc_Link {
