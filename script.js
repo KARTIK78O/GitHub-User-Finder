@@ -67,9 +67,7 @@ async function getdata() {
     login.textContent = Data.login || "No Login";
     Followers.textContent = `Followers: ${Data.followers}`;
     Following.textContent = `Following: ${Data.following}`;
-    X_Acc_Link.textContent = Data.twitter_username
-      ? `https://twitter.com/${Data.twitter_username}`
-      : "No Twitter";
+    X_Acc_Link.textContent = Data.twitter_username || "No Twitter";
     Bio.textContent = Data.bio || "No Bio";
   } catch (error) {
     console.log("Error fetching data:", error);
