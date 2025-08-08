@@ -43,10 +43,10 @@ Submit.addEventListener("keydown", function (e) {
 // getting Data - Data values and Key
 
 async function getdata() {
-  const username = Submit.value.trim();
+  const username = Submit.value.trim();  //Submit Class Ki Value Lega .Value se Aur use .trim Kar dega
 
   if (username === "") {
-    alert("Please enter a username");
+    alert("Please enter a username");  // Agar Username Empty Hai to Alert Dega
     return;
   }
 
